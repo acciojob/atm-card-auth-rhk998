@@ -20,21 +20,21 @@ public class ATMCard {
         }
     }
 
-    public static void validateCardNumber(String cardNumber) throws InvalidCardNumberException, InvalidNumberFormatException {
+    public static void validateCardNumber(String cardNumber) throws InvalidCardNumberException {
         if (cardNumber.length() != 12) {
             throw new InvalidCardNumberException("Card number should be 12 digits long.");
         }
         if (!cardNumber.matches("\\d+")) {
-            throw new InvalidNumberFormatException("Card number should only contain numbers.");
+            throw new java.lang.NumberFormatException("Card number should only contain numbers.");
         }
     }
 
-    public static void validatePin(String pin) throws InvalidPinException, InvalidNumberFormatException {
+    public static void validatePin(String pin) throws InvalidPinException {
         if (pin.length() != 4) {
             throw new InvalidPinException("Pin should be 4 digits long.");
         }
         if (!pin.matches("\\d+")) {
-            throw new InvalidNumberFormatException("Pin should only contain numbers.");
+            throw new java.lang.NumberFormatException("Pin should only contain numbers.");
         }
     }
 }
