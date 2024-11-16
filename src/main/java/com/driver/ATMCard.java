@@ -2,9 +2,8 @@ package com.driver;
 
 import java.util.Scanner;
 
-
 public class ATMCard {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter card number: ");
         String cardNumber = sc.nextLine();
@@ -21,22 +20,21 @@ public class ATMCard {
         }
     }
 
-    public static void validateCardNumber(String cardNumber) throws InvalidCardNumberException, NumberFormatException {
+    public static void validateCardNumber(String cardNumber) throws InvalidCardNumberException, InvalidNumberFormatException {
         if (cardNumber.length() != 12) {
             throw new InvalidCardNumberException("Card number should be 12 digits long.");
         }
         if (!cardNumber.matches("\\d+")) {
-            throw new java.lang.NumberFormatException("Card number should only contain numbers.");
+            throw new InvalidNumberFormatException("Card number should only contain numbers.");
         }
     }
 
-    public static void validatePin(String pin) throws InvalidPinException, NumberFormatException {
+    public static void validatePin(String pin) throws InvalidPinException, InvalidNumberFormatException {
         if (pin.length() != 4) {
             throw new InvalidPinException("Pin should be 4 digits long.");
         }
         if (!pin.matches("\\d+")) {
-            throw new java.lang.NumberFormatException("Pin should only contain numbers.");
+            throw new InvalidNumberFormatException("Pin should only contain numbers.");
         }
     }
-
 }
