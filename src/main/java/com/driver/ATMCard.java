@@ -1,7 +1,6 @@
 package com.driver;
 
 import java.util.Scanner;
-import com.driver.NumberFormatException;
 
 
 public class ATMCard {
